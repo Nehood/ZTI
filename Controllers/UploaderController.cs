@@ -151,5 +151,46 @@ namespace UploadingFileUsingAjaxAndHTML5.Controllers
 
             }
         }
+        //
+        // GET: /Uploader/Login
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(UserTable user)
+        {
+            //action for handling post (login)
+            if(ModelState.IsValid)  //check validity
+            {
+                using (AttachmentDBEntities dc = new AttachmentDBEntities())
+                {
+                    var v = dc.UserTables.Where(a => a.Username.Equals(user.Username) && a.Password.Equals(user.Password)).FirstOrDefault();
+                    if (v != null)
+                    {
+                        Session["LoggedUserID"] = v.Id.ToString();
+                        Session["LoggedUsername"] = v.Username.ToString();
+                        return RedirectToAction("AfterLogin");
+                    }
+                }
+            }
+            return View(user);
+        }
+
+        //
+        // GET: /Uploader/AfterLogin
+        public ActionResult AfterLogin()
+        {
+            if (Session["LoggedUserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
     }
 }

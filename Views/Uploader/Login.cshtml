@@ -1,0 +1,45 @@
+﻿@model UploadingFileUsingAjaxAndHTML5.UserTable
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Uploader", FormMethod.Post))
+{
+    //create form tag
+    @Html.AntiForgeryToken()    //prevent CSRF attack
+    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+        <div style="border:1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+    <table>
+        <tr>
+            <td>@Html.LabelFor(a=>a.Username)</td>
+            <td>@Html.TextBoxFor(a=>a.Username)</td>
+            <td>@Html.ValidationMessageFor(a=>a.Username)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(a=>a.Password)</td>
+            <td>@Html.TextBoxFor(a=>a.Password)</td>
+            <td>@Html.ValidationMessageFor(a=>a.Password)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Login" />
+            </td>
+            <td></td>
+        </tr>
+    </table>
+}
+
+@* Line below for create js *@
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")    
+}
