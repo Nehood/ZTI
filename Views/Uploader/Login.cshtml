@@ -4,7 +4,7 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<link href="~/Content/loginStyle.css" type="text/css" rel="stylesheet" />
 
 @using (Html.BeginForm("Login", "Uploader", FormMethod.Post))
 {
@@ -17,25 +17,25 @@
             @ViewBag.Message
         </div>
     }
-    <table>
-        <tr>
-            <td>@Html.LabelFor(a=>a.Username)</td>
-            <td>@Html.TextBoxFor(a=>a.Username)</td>
-            <td>@Html.ValidationMessageFor(a=>a.Username)</td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(a=>a.Password)</td>
-            <td>@Html.TextBoxFor(a=>a.Password)</td>
-            <td>@Html.ValidationMessageFor(a=>a.Password)</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Login" />
-            </td>
-            <td></td>
-        </tr>
-    </table>
+
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <h1>Login to DragCase</h1><br>
+            <form>
+                @Html.TextBoxFor(a => a.Username, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.Username, "", new { @class = "text-danger" })
+
+                @Html.PasswordFor(a => a.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.Password, "", new { @class = "text-danger" })
+                <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+            </form>
+
+            <div class="login-help">
+                <a href="#">Register</a> - <a href="#">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+
 }
 
 @* Line below for create js *@
