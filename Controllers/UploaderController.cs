@@ -172,7 +172,7 @@ namespace UploadingFileUsingAjaxAndHTML5.Controllers
                     {
                         Session["LoggedUserID"] = v.Id.ToString();
                         Session["LoggedUsername"] = v.Username.ToString();
-                        return RedirectToAction("AfterLogin");
+                        return RedirectToAction("Index");
                     }
                 }
             }
