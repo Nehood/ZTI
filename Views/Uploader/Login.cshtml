@@ -22,16 +22,18 @@
         <div class="loginmodal-container">
             <h1>Login to DragCase</h1><br>
             <form>
+                @Html.Label("Username")
                 @Html.TextBoxFor(a => a.Username, new { @class = "form-control" })
                 @Html.ValidationMessageFor(a => a.Username, "", new { @class = "text-danger" })
 
+                @Html.Label("Password")
                 @Html.PasswordFor(a => a.Password, new { @class = "form-control" })
                 @Html.ValidationMessageFor(a => a.Password, "", new { @class = "text-danger" })
                 <input type="submit" name="login" class="login loginmodal-submit" value="Login">
             </form>
 
             <div class="login-help">
-                <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                <a href="#">Register</a><!-- - <a href="#">Forgot Password</a>-->
             </div>
         </div>
     </div>

@@ -18,8 +18,16 @@ namespace UploadingFileUsingAjaxAndHTML5.Controllers
         // GET: /Uploader/
         public ActionResult Index()
         {
-            var Files = attachmentManager.GetAllAttachments();
-            return View(Files);
+            if (Session["LoggedUserID"] != null)
+            {
+                var Files = attachmentManager.GetAllAttachments();
+                return View(Files);
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+            
         }
         //
         // GET: /Uploader/Upload
@@ -190,6 +198,19 @@ namespace UploadingFileUsingAjaxAndHTML5.Controllers
             else
             {
                 return RedirectToAction("Index");
+            }
+        }
+
+        public ActionResult LogOut()
+        {
+            if (Session["LoggedUserID"] != null)
+            {
+                Session["LoggedUserID"] = null;
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                return RedirectToAction("Login");
             }
         }
     }

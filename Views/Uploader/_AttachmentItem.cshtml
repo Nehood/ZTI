@@ -1,6 +1,6 @@
 ﻿@model UploadingFileUsingAjaxAndHTML5.Models.Attachment
 <tr id="Attachment_@Model.ID">
-    <td>@Model.ID</td>
+    <!--<td>@Model.ID</td>-->
     <td>@Model.FileName</td>
     <td>@Model.FileType</td>
     <td>@Html.ActionLink("Download", "DownloadAttachment", new { id = Model.ID }) | 
