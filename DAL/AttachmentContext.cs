@@ -18,6 +18,7 @@ namespace UploadingFileUsingAjaxAndHTML5.DAL
         public DbSet<Attachment> Attachments { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            Database.SetInitializer<AttachmentContext>(null);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }

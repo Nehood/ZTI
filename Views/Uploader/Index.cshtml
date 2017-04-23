@@ -99,11 +99,15 @@
             <!--<th>ID</th>-->
             <th>Name</th>
             <th>Type</th>
+            <th>Owner</th>
             <th>Operation</th>
         </tr>
         @foreach (var Attachment in Model)
         {
-            @Html.Partial("_AttachmentItem", Attachment);
+            if (Attachment.Owner.Equals(Session["LoggedUsername"].ToString()))
+            {
+                @Html.Partial("_AttachmentItem", Attachment);
+            }
         }
 
     </table>

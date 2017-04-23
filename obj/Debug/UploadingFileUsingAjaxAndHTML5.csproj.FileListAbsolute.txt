@@ -124,3 +124,8 @@ C:\Projects\ZTI\bin\System.Web.WebPages.Razor.xml
 C:\Projects\ZTI\obj\Debug\UploadingFileUsingAjaxAndHTML5.csprojResolveAssemblyReference.cache
 C:\Projects\ZTI\obj\Debug\UploadingFileUsingAjaxAndHTML5.dll
 C:\Projects\ZTI\obj\Debug\UploadingFileUsingAjaxAndHTML5.pdb
+F:\Studia\Semestr 8\ZTI\bin\UploadingFileUsingAjaxAndHTML5.dll.config
+F:\Studia\Semestr 8\ZTI\bin\UploadingFileUsingAjaxAndHTML5.dll
+F:\Studia\Semestr 8\ZTI\bin\UploadingFileUsingAjaxAndHTML5.pdb
+F:\Studia\Semestr 8\ZTI\obj\Debug\UploadingFileUsingAjaxAndHTML5.dll
+F:\Studia\Semestr 8\ZTI\obj\Debug\UploadingFileUsingAjaxAndHTML5.pdb

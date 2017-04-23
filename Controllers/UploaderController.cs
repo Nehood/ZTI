@@ -56,6 +56,7 @@ namespace UploadingFileUsingAjaxAndHTML5.Controllers
                 newAttchment.FileName = uploadedFile.FileName;
                 newAttchment.FileType = uploadedFile.ContentType;
                 newAttchment.FileContent = FileByteArray;
+                newAttchment.Owner = Session["LoggedUsername"].ToString();
                 OperationResult operationResult = attachmentManager.SaveAttachment(newAttchment);
                 if (operationResult.Success)
                 {
@@ -134,6 +135,7 @@ namespace UploadingFileUsingAjaxAndHTML5.Controllers
                     newAttchment.FileName = File.FileName;
                     newAttchment.FileType = File.ContentType;
                     newAttchment.FileContent = FileByteArray;
+                    newAttchment.Owner = Session["LoggedUsername"].ToString();
                     newAttachmentList.Add(newAttchment);
                 }
             }
