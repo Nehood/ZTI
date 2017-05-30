@@ -284,6 +284,7 @@
     </Content>
     <Content Include="Views\Uploader\Login.cshtml" />
     <Content Include="Views\Uploader\AfterLogin.cshtml" />
+    <Content Include="Views\Uploader\Share.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -215,5 +215,10 @@ namespace UploadingFileUsingAjaxAndHTML5.Controllers
                 return RedirectToAction("Login");
             }
         }
+
+        public ActionResult ShareAttachment()
+        {
+            return PartialView("Share");
+        }
     }
 }
